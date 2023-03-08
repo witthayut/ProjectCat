@@ -1,4 +1,8 @@
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 
 class PetDetailsCopyWidget extends StatefulWidget {
   const PetDetailsCopyWidget({Key? key}) : super(key: key);
@@ -10,6 +14,7 @@ class PetDetailsCopyWidget extends StatefulWidget {
 class _PetDetailsCopyWidgetState extends State<PetDetailsCopyWidget> {
   final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  Query refQ = FirebaseDatabase.instance.ref().child('user');
 
   @override
   void dispose() {
@@ -20,7 +25,7 @@ class _PetDetailsCopyWidgetState extends State<PetDetailsCopyWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Color.fromARGB(255, 204, 231, 255),
       body: SafeArea(
         child: GestureDetector(
           child: Column(
@@ -29,7 +34,7 @@ class _PetDetailsCopyWidgetState extends State<PetDetailsCopyWidget> {
                 width: double.infinity,
                 height: 80,
                 decoration: const BoxDecoration(
-                  color: Color(0xD39CE0FF),
+                  color: Color.fromARGB(210, 101, 209, 255),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30),
@@ -72,7 +77,7 @@ class _PetDetailsCopyWidgetState extends State<PetDetailsCopyWidget> {
                   width: double.infinity,
                   height: 160,
                   decoration: BoxDecoration(
-                    color: const Color(0xD39CE0FF),
+                    color: Colors.white,
                     boxShadow: const [
                       BoxShadow(
                         blurRadius: 4,
@@ -139,7 +144,7 @@ class _PetDetailsCopyWidgetState extends State<PetDetailsCopyWidget> {
                         width: 170,
                         height: 170,
                         decoration: BoxDecoration(
-                          color: const Color(0xD39CE0FF),
+                          color: Colors.white,
                           boxShadow: const [
                             BoxShadow(
                               blurRadius: 4,
@@ -184,23 +189,23 @@ class _PetDetailsCopyWidgetState extends State<PetDetailsCopyWidget> {
                                 ],
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0, 5, 0, 0),
-                              child: Container(
-                                width: 150,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                  color: Color(0xD39CE0FF),
-                                  image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: Image.asset(
-                                      'assets/images/_(1).jpg',
-                                    ).image,
-                                  ),
-                                ),
-                              ),
-                            ),
+                            // Padding(
+                            //   padding: const EdgeInsetsDirectional.fromSTEB(
+                            //       0, 5, 0, 0),
+                            //   child: Container(
+                            //     width: 150,
+                            //     height: 60,
+                            //     decoration: BoxDecoration(
+                            //       color: Color.fromARGB(210, 255, 255, 255),
+                            //       image: DecorationImage(
+                            //         fit: BoxFit.cover,
+                            //         image: Image.asset(
+                            //           'assets/images/_(1).jpg',
+                            //         ).image,
+                            //       ),
+                            //     ),
+                            //   ),
+                            // ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0, 5, 0, 0),
@@ -291,23 +296,23 @@ class _PetDetailsCopyWidgetState extends State<PetDetailsCopyWidget> {
                                 ],
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0, 5, 0, 0),
-                              child: Container(
-                                width: 150,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: Image.asset(
-                                      'assets/images/_(1).jpg',
-                                    ).image,
-                                  ),
-                                ),
-                              ),
-                            ),
+                            // Padding(
+                            //   padding: const EdgeInsetsDirectional.fromSTEB(
+                            //       0, 5, 0, 0),
+                            //   child: Container(
+                            //     width: 150,
+                            //     height: 60,
+                            //     decoration: BoxDecoration(
+                            //       color: Colors.white,
+                            //       image: DecorationImage(
+                            //         fit: BoxFit.cover,
+                            //         image: Image.asset(
+                            //           'assets/images/_(1).jpg',
+                            //         ).image,
+                            //       ),
+                            //     ),
+                            //   ),
+                            // ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0, 0, 0, 0),
@@ -392,22 +397,22 @@ class _PetDetailsCopyWidgetState extends State<PetDetailsCopyWidget> {
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                            child: Container(
-                              width: 150,
-                              height: 60,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: Image.asset(
-                                    'assets/images/_(1).jpg',
-                                  ).image,
-                                ),
-                              ),
-                            ),
-                          ),
+                          // Padding(
+                          //   padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                          //   child: Container(
+                          //     width: 150,
+                          //     height: 60,
+                          //     decoration: BoxDecoration(
+                          //       color: Colors.white,
+                          //       image: DecorationImage(
+                          //         fit: BoxFit.cover,
+                          //         image: Image.asset(
+                          //           'assets/images/_(1).jpg',
+                          //         ).image,
+                          //       ),
+                          //     ),
+                          //   ),
+                          // ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                             child: Row(

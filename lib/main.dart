@@ -14,7 +14,7 @@ class Name extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: InformationWidget(),
+      home: PetDetailsCopyWidget(),
     );
   }
 }
