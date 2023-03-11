@@ -100,7 +100,7 @@ class _PetDetailsCopyWidgetState extends State<PetDetailsCopyWidget> {
                             alignment: AlignmentDirectional(-1, 0),
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 40, 60, 0),
+                                  EdgeInsetsDirectional.fromSTEB(10, 40, 60, 0),
                               child: SelectionArea(
                                   child: Text(
                                 'Som Pong',
@@ -115,10 +115,10 @@ class _PetDetailsCopyWidgetState extends State<PetDetailsCopyWidget> {
                             alignment: AlignmentDirectional(-1, 0),
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                               child: SelectionArea(
                                   child: Text(
-                                'Female  :  2 Years 3 Months',
+                                'Female  :  2 Years',
                                 style: TextStyle(
                                   fontFamily: 'Poppins',
                                   fontSize: 17,

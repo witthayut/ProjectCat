@@ -1,6 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:projectdemo/pet_detail.dart';
+
+import 'Detail.dart';
 
 class InformationWidget extends StatefulWidget {
   const InformationWidget({Key? key}) : super(key: key);
@@ -324,7 +327,8 @@ class _InformationWidgetState extends State<InformationWidget> {
                     //   ),
                     // ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
                       child: ElevatedButton(
                           onPressed: () {
                             Map<String, String> user = {
@@ -333,8 +337,10 @@ class _InformationWidgetState extends State<InformationWidget> {
                               'Gender': genderController.text
                             };
                             dbRef.push().set(user);
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: ((context) => const PetDetail())));
                           },
-                          child: Text("Next")),
+                          child: const Text("Next")),
                     )
                   ],
                 ),

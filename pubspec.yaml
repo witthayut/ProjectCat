@@ -37,6 +37,7 @@ dependencies:
   flutter_launcher_icons: ^0.10.0
   firebase_core: ^2.4.1
   firebase_database: ^10.0.14
+  auto_reload: ^1.1.0
 
 flutter_icons:
   android: true
