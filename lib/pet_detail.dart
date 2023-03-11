@@ -22,6 +22,7 @@ class _PetDetailState extends State<PetDetail> {
   }
 
   Query refQ = FirebaseDatabase.instance.ref().child('user');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -169,20 +170,20 @@ class _PetDetailState extends State<PetDetail> {
                               children: const [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      13, 0, 0, 0),
+                                      15, 5, 0, 0),
                                   child: SelectionArea(
                                       child: Text(
-                                    'Oxygen\nSaturation',
+                                    'Blood\nPressure',
                                     style: TextStyle(
                                       fontFamily: 'Poppins',
-                                      fontSize: 14,
+                                      fontSize: 18,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   )),
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      30, 0, 0, 0),
+                                      23, 0, 0, 0),
                                   child: Icon(
                                     Icons.favorite,
                                     color: Color(0xFFF23333),
@@ -192,51 +193,35 @@ class _PetDetailState extends State<PetDetail> {
                               ],
                             ),
                           ),
-                          // Padding(
-                          //   padding: const EdgeInsetsDirectional.fromSTEB(
-                          //       0, 5, 0, 0),
-                          //   child: Container(
-                          //     width: 150,
-                          //     height: 60,
-                          //     decoration: BoxDecoration(
-                          //       color: Color.fromARGB(210, 255, 255, 255),
-                          //       image: DecorationImage(
-                          //         fit: BoxFit.cover,
-                          //         image: Image.asset(
-                          //           'assets/images/_(1).jpg',
-                          //         ).image,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0, 5, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
-                              children: const [
+                              children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      13, 0, 0, 0),
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      45, 20, 0, 0),
                                   child: SelectionArea(
                                       child: Text(
-                                    '112/135',
-                                    style: TextStyle(
+                                    userMap['avgBmp'].toString(),
+                                    style: const TextStyle(
                                       fontFamily: 'Poppins',
                                       color: Color(0xFF020202),
                                       fontWeight: FontWeight.normal,
+                                      fontSize: 30,
                                     ),
                                   )),
                                 ),
-                                Padding(
+                                const Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      3, 2, 0, 0),
+                                      3, 28, 0, 0),
                                   child: SelectionArea(
                                       child: Text(
-                                    'mmhg',
+                                    'bpm',
                                     style: TextStyle(
                                       fontFamily: 'Poppins',
-                                      fontSize: 10,
+                                      fontSize: 18,
                                       fontWeight: FontWeight.w300,
                                     ),
                                   )),
@@ -276,13 +261,13 @@ class _PetDetailState extends State<PetDetail> {
                               children: const [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      13, 0, 0, 0),
+                                      15, 5, 0, 0),
                                   child: SelectionArea(
                                       child: Text(
                                     'Tem\nperature',
                                     style: TextStyle(
                                       fontFamily: 'Poppins',
-                                      fontSize: 14,
+                                      fontSize: 18,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   )),
@@ -299,39 +284,37 @@ class _PetDetailState extends State<PetDetail> {
                               ],
                             ),
                           ),
-                          // Padding(
-                          //   padding: const EdgeInsetsDirectional.fromSTEB(
-                          //       0, 5, 0, 0),
-                          //   child: Container(
-                          //     width: 150,
-                          //     height: 60,
-                          //     decoration: BoxDecoration(
-                          //       color: Colors.white,
-                          //       image: DecorationImage(
-                          //         fit: BoxFit.cover,
-                          //         image: Image.asset(
-                          //           'assets/images/_(1).jpg',
-                          //         ).image,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0, 0, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
-                              children: const [
+                              children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      15, 0, 0, 0),
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      37, 20, 0, 0),
                                   child: SelectionArea(
                                       child: Text(
-                                    '35°C',
+                                    userMap['temp'].toStringAsFixed(1),
+                                    style: const TextStyle(
+                                      fontFamily: 'Poppins',
+                                      color: Color(0xFF020202),
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 30,
+                                    ),
+                                  )),
+                                ),
+                                const Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      3, 28, 0, 0),
+                                  child: SelectionArea(
+                                      child: Text(
+                                    '°C',
                                     style: TextStyle(
                                       fontFamily: 'Poppins',
                                       color: Color(0xFF020202),
                                       fontWeight: FontWeight.normal,
+                                      fontSize: 18,
                                     ),
                                   )),
                                 ),
@@ -370,26 +353,27 @@ class _PetDetailState extends State<PetDetail> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                          padding:
+                              const EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
-                            children: [
+                            children: const [
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(17, 0, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(15, 5, 0, 0),
                                 child: SelectionArea(
                                     child: Text(
-                                  'Blood\nPressure',
+                                  'Oxygen\nSaturation',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 14,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 )),
                               ),
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(23, 0, 0, 0),
                                 child: Icon(
                                   Icons.cloud_circle,
                                   color: Color(0xFF5FCFFF),
@@ -399,49 +383,35 @@ class _PetDetailState extends State<PetDetail> {
                             ],
                           ),
                         ),
-                        // Padding(
-                        //   padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                        //   child: Container(
-                        //     width: 150,
-                        //     height: 60,
-                        //     decoration: BoxDecoration(
-                        //       color: Colors.white,
-                        //       image: DecorationImage(
-                        //         fit: BoxFit.cover,
-                        //         image: Image.asset(
-                        //           'assets/images/_(1).jpg',
-                        //         ).image,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                          padding:
+                              const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(13, 0, 0, 0),
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    60, 20, 0, 0),
                                 child: SelectionArea(
                                     child: Text(
-                                  '112/135',
-                                  style: TextStyle(
+                                  userMap['o2'].toString(),
+                                  style: const TextStyle(
                                     fontFamily: 'Poppins',
                                     color: Color(0xFF020202),
                                     fontWeight: FontWeight.normal,
+                                    fontSize: 30,
                                   ),
                                 )),
                               ),
-                              Padding(
+                              const Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(3, 2, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(3, 28, 0, 0),
                                 child: SelectionArea(
                                     child: Text(
-                                  'mmhg',
+                                  '%',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 10,
+                                    fontSize: 20,
                                     fontWeight: FontWeight.w300,
                                   ),
                                 )),
@@ -459,11 +429,5 @@ class _PetDetailState extends State<PetDetail> {
         ),
       ),
     );
-    // Column(
-    //   children: [
-    //     // Text(userMap['name']),
-    //     // Text(userMap['age']),
-    //   ],
-    // );
   }
 }
