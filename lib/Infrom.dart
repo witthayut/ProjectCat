@@ -238,94 +238,6 @@ class _InformationWidgetState extends State<InformationWidget> {
                         ),
                       ),
                     ),
-
-                    // Padding(
-                    //   padding: EdgeInsetsDirectional.fromSTEB(40, 40, 0, 0),
-                    //   child: Container(
-                    //     width: 318.5,
-                    //     height: 100,
-                    //     decoration: BoxDecoration(
-                    //       color: Colors.blue,
-                    //       boxShadow: [
-                    //         BoxShadow(
-                    //           blurRadius: 4,
-                    //           color: Color(0x33000000),
-                    //           offset: Offset(0, 2),
-                    //         )
-                    //       ],
-                    //       borderRadius: BorderRadius.circular(13),
-                    //     ),
-                    //     child: Column(
-                    //       mainAxisSize: MainAxisSize.max,
-                    //       crossAxisAlignment: CrossAxisAlignment.start,
-                    //       children: [
-                    //         Padding(
-                    //           padding:
-                    //               EdgeInsetsDirectional.fromSTEB(15, 10, 0, 0),
-                    //           child: Text(
-                    //             'weight',
-                    //             style: TextStyle(
-                    //               fontFamily: 'Poppins',
-                    //               fontSize: 17,
-                    //             ),
-                    //           ),
-                    //         ),
-                    //         Padding(
-                    //           padding:
-                    //               EdgeInsetsDirectional.fromSTEB(10, 7, 0, 0),
-                    //           child: Container(
-                    //             width: 295.5,
-                    //             height: 47.8,
-                    //             decoration: BoxDecoration(
-                    //               color: Colors.white,
-                    //               borderRadius: BorderRadius.circular(10),
-                    //             ),
-                    //           ),
-                    //         ),
-                    //       ],
-                    //     ),
-                    //   ),
-                    // ),
-                    // Padding(
-                    //   padding:
-                    //       const EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
-                    //   child: Row(
-                    //     mainAxisSize: MainAxisSize.max,
-                    //     mainAxisAlignment: MainAxisAlignment.center,
-                    //     children: [
-                    //       TextButton(
-                    //         onPressed: () {},
-                    //         child: Container(
-                    //           color: const Color.fromARGB(255, 50, 50, 50),
-                    //           padding: const EdgeInsets.symmetric(
-                    //               vertical: 5, horizontal: 10),
-                    //           child: const Text(
-                    //             'Back',
-                    //             style: TextStyle(
-                    //                 color: Colors.white, fontSize: 13.0),
-                    //           ),
-                    //         ),
-                    //       ),
-                    //       Padding(
-                    //         padding: const EdgeInsetsDirectional.fromSTEB(
-                    //             150, 0, 0, 0),
-                    //         child: TextButton(
-                    //           onPressed: () {},
-                    //           child: Container(
-                    //             color: const Color.fromARGB(255, 50, 50, 50),
-                    //             padding: const EdgeInsets.symmetric(
-                    //                 vertical: 5, horizontal: 10),
-                    //             child: const Text(
-                    //               'Next',
-                    //               style: TextStyle(
-                    //                   color: Colors.white, fontSize: 13.0),
-                    //             ),
-                    //           ),
-                    //         ),
-                    //       ),
-                    //     ],
-                    //   ),
-                    // ),
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
@@ -337,8 +249,8 @@ class _InformationWidgetState extends State<InformationWidget> {
                               'Gender': genderController.text
                             };
                             dbRef.push().set(user);
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: ((context) => const PetDetail())));
+                            // Navigator.of(context).push(MaterialPageRoute(
+                            //     builder: ((context) => const PetDetail())));
                           },
                           child: const Text("Next")),
                     )

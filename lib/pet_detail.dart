@@ -2,6 +2,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_reload/auto_reload.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PetDetail extends StatefulWidget {
   const PetDetail({super.key});
@@ -32,6 +33,7 @@ class _PetDetailState extends State<PetDetail> {
         query: refQ,
         itemBuilder: (context, snapshot, animation, index) {
           Map userMap = snapshot.value as Map;
+          userMap['key'] = snapshot.key;
           return ShowDisplay(userMap: userMap);
         },
       )),
@@ -425,9 +427,31 @@ class _PetDetailState extends State<PetDetail> {
                 ],
               ),
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _launchURL(userMap['lat'], userMap['log']);
+              },
+              child: const Text('Location of your cat'),
+            ),
           ],
         ),
       ),
     );
+  }
+
+  _launchURL(String latt, String logg) async {
+    final lat = latt;
+    final lon = logg;
+    final url = 'https://www.google.com/maps/search/?api=1&query=$lat,$lon';
+    final uri = Uri.parse(url);
+
+    if (await launchUrl(uri)) {
+      await canLaunchUrl(uri);
+    } else {
+      throw 'Could not launch';
+    }
   }
 }
