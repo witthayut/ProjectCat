@@ -175,7 +175,7 @@ class _PetDetailState extends State<PetDetail> {
                                       15, 5, 0, 0),
                                   child: SelectionArea(
                                       child: Text(
-                                    'Blood\nPressure',
+                                    'Heart rate',
                                     style: TextStyle(
                                       fontFamily: 'Poppins',
                                       fontSize: 18,
@@ -207,9 +207,12 @@ class _PetDetailState extends State<PetDetail> {
                                   child: SelectionArea(
                                       child: Text(
                                     userMap['avgBmp'].toString(),
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       fontFamily: 'Poppins',
-                                      color: Color(0xFF020202),
+                                      color: userMap['avgBmp'] < 50 ||
+                                              userMap['avgBmp'] > 100
+                                          ? Color(0xFFEE3B3B)
+                                          : Color(0xFF020202),
                                       fontWeight: FontWeight.normal,
                                       fontSize: 30,
                                     ),
@@ -298,9 +301,12 @@ class _PetDetailState extends State<PetDetail> {
                                   child: SelectionArea(
                                       child: Text(
                                     userMap['temp'].toStringAsFixed(1),
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       fontFamily: 'Poppins',
-                                      color: Color(0xFF020202),
+                                      color: userMap['temp'] < 25 ||
+                                              userMap['temp'] > 35
+                                          ? Color(0xFFEE3B3B)
+                                          : Color(0xFF020202),
                                       fontWeight: FontWeight.normal,
                                       fontSize: 30,
                                     ),
@@ -397,9 +403,11 @@ class _PetDetailState extends State<PetDetail> {
                                 child: SelectionArea(
                                     child: Text(
                                   userMap['o2'].toString(),
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    color: Color(0xFF020202),
+                                    color: userMap['o2'] < 80
+                                        ? const Color(0xFFEE3B3B)
+                                        : const Color(0xFF020202),
                                     fontWeight: FontWeight.normal,
                                     fontSize: 30,
                                   ),
@@ -432,7 +440,8 @@ class _PetDetailState extends State<PetDetail> {
             ),
             ElevatedButton(
               onPressed: () {
-                _launchURL(userMap['lat'], userMap['log']);
+                _launchURL(
+                    userMap['lat'].toString(), userMap['log'].toString());
               },
               child: const Text('Location of your cat'),
             ),

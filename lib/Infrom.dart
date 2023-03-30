@@ -243,14 +243,14 @@ class _InformationWidgetState extends State<InformationWidget> {
                           const EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
                       child: ElevatedButton(
                           onPressed: () {
-                            Map<String, String> user = {
-                              'name': nameController.text,
-                              'age': ageController.text,
-                              'Gender': genderController.text
-                            };
-                            dbRef.push().set(user);
-                            // Navigator.of(context).push(MaterialPageRoute(
-                            //     builder: ((context) => const PetDetail())));
+                            // Map<String, String> user = {
+                            //   'name': nameController.text,
+                            //   'age': ageController.text,
+                            //   'Gender': genderController.text
+                            // };
+                            // dbRef.push().set(user);
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: ((context) => const PetDetail())));
                           },
                           child: const Text("Next")),
                     )
